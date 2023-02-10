@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table, tr, td {
+        border: 1px solid black;
+        padding: 30px;
+        text-align: center;
+        font-size: 32px;
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="tic-tac-toe">
+      <tr>
+        <td id="square1"></td>
+        <td id="square2"></td>
+        <td id="square3"></td>
+      </tr>
+      <tr>
+        <td id="square4"></td>
+        <td id="square5"></td>
+        <td id="square6"></td>
+      </tr>
+      <tr>
+        <td id="square7"></td>
+        <td id="square8"></td>
+        <td id="square9"></td>
+      </tr>
+    </table>
+    <script>
+      const squares = document.querySelectorAll("td");
+      let player = "X";
+
+      for (let i = 0; i < squares.length; i++) {
+        squares[i].addEventListener("click", function() {
+          if (this.textContent === "") {
+            this.textContent = player;
+            player = player === "X" ? "O" : "X";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
